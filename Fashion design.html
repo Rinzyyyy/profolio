@@ -18,10 +18,79 @@
       <a class="hover" href="./3D fashion.html">3D fashion</a>
       <a class="hover" href="./T-profolio.html">Layout design</a>
     </section>
-    <!---------------------------------------------------------------no1--------------- -->
 
-    <div id="slide" class="FDcontainer">
-      <main id="m-1" class="FD">
+    <!---------------------------------------------------------------no1--------------- -->
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.47/vue.global.min.js"
+    integrity="sha512-DJ2+sosWB5FnZAIeCWAHu2gxQ7Gi438oOZLcBQSOrW8gD0s7LIXDv/5RW76B3FcljF40BXnfqNIo6Dhp7dFHJg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+   <script type="module">
+    const { createApp } = Vue;
+    createApp({
+      data(){
+        return{
+          width:0,
+          step:0,
+          arrowPosition:"95%",
+          arrow:">"
+        }
+      },
+      mounted(){
+        this.getsize();
+        window.onresize = ()=>{
+          this.getsize(); 
+        }
+        },
+      methods:{
+        getsize(){
+          this.$refs.container.scrollLeft=0;
+          this.width = this.$refs.container.offsetWidth;
+          this.step = this.$refs.contents.offsetWidth;
+          this.direction = "R";
+          this.padding = this.width-this.step;
+  
+        },
+        slide(){
+
+          if((this.$refs.container.scrollLeft >= this.step*6-this.padding &&this.direction == "R")
+          ||(this.direction === "L"&&this.$refs.container.scrollLeft!=0)){
+
+            this.$refs.container.scrollLeft-=this.step
+            this.direction = "L";
+          
+
+          }else if ((this.$refs.container.scrollLeft===0 && this.direction === "L")
+          ||this.direction === "R"){
+            this.$refs.container.scrollLeft+=this.step
+            this.direction = "R";
+           
+          }
+
+          if((this.$refs.container.scrollLeft >= this.step*6-this.padding && this.direction == "R")
+          ||this.direction === "L"&&this.$refs.container.scrollLeft!=0){
+            this.arrowPosition="5%"
+            this.arrow="<"
+
+          }else if((this.$refs.container.scrollLeft===0 && this.direction === "L")
+          ||this.direction === "R"){
+            this.arrowPosition="95%"
+            this.arrow=">"
+          }
+
+        }
+      },
+      computed:{
+        
+      }
+
+    }).mount('#slide')
+    </script>
+    <div id="slide">
+    <div class="FDcontainer" ref="container" @resize="getsize">
+      <button class="arrow" @click="slide" :style="{left:arrowPosition}">{{arrow}}</button>
+      <main id="m-1" class="FD" ref="contents">
         <img
           class="FD-M-1"
           src="./image/Fashion-Design/FD-1.png"
@@ -39,7 +108,7 @@
         </p>
       </main>
       <!---------------------------------------------------------------no2--------------- -->
-      <main id="m-2" class="FD" :style="{transform: transform}">
+      <main id="m-2" class="FD">
         <img
           class="FD-M-2"
           src="./image/Fashion-Design/FD-2.png"
@@ -59,7 +128,7 @@
         </p>
       </main>
       <!---------------------------------------------------------------no3--------------- -->
-      <main id="m-3" class="FD" :style="{transform: transform}">
+      <main id="m-3" class="FD">
         <img
           class="FD-M-3"
           src="./image/Fashion-Design/FD-3.png"
@@ -78,7 +147,7 @@
         </p>
       </main>
       <!---------------------------------------------------------------no4--------------- -->
-      <main id="m-4" class="FD" :style="{transform: transform}">
+      <main id="m-4" class="FD">
         <img
           class="FD-M-4"
           src="./image/Fashion-Design/FD-4.png"
@@ -97,7 +166,7 @@
         </p>
       </main>
       <!---------------------------------------------------------------no5--------------- -->
-      <main id="m-5" class="FD" :style="{transform: transform}">
+      <main id="m-5" class="FD" >
         <img
           class="FD-M-5"
           src="./image/Fashion-Design/FD-5.png"
@@ -115,7 +184,7 @@
         </p>
       </main>
       <!---------------------------------------------------------------no6--------------- -->
-      <main id="m-6" class="FD" :style="{transform: transform}">
+      <main id="m-6" class="FD" >
         <img
           class="FD-M-6"
           src="./image/Fashion-Design/FD-6.png"
@@ -135,7 +204,7 @@
         </p>
       </main>
       <!-----last------------------------------------------------------last--------------- -->
-      <main id="m-7" class="FD" :style="{transform: transform}">
+      <main id="m-7" class="FD" >
         <img
           class="FD-M-7"
           src="./image/Fashion-Design/FD-7.png"
@@ -150,6 +219,7 @@
         </p>
       </main>
     </div>
+  </div>
     <footer>
       <a class="lo" href="./index.html"><img src="./logo lu.png" /></a>
       <p class="fo">©2023 by Rinzy Lu</p>

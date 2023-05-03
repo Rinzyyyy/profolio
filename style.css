@@ -222,6 +222,7 @@ footer .lo img {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 }
 .FD-B footer {
   background-color: rgba(192, 191, 191, 0.4352941176);
@@ -239,15 +240,21 @@ footer .lo img {
 .FDcontainer {
   display: flex;
   width: 100vw;
-  margin-top: 15vh;
+  margin-top: 12vh;
   overflow-x: scroll;
   padding: 0;
 }
-.FDcontainer .narrow {
-  position: absolute;
-  top: 85%;
-  left: 93%;
+.FDcontainer .arrow {
+  position: fixed;
+  left: 95%;
+  height: 50%;
+  opacity: 0.4;
   font-size: 2rem;
+  border: none;
+}
+.FDcontainer .arrow:hover {
+  background-color: #e1a6b3;
+  opacity: 0.9;
 }
 
 .FD {
@@ -255,7 +262,7 @@ footer .lo img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-right: 2rem;
+  padding-left: 2rem;
 }
 .FD p {
   width: 90vw;
@@ -280,15 +287,21 @@ footer .lo img {
 }
 
 .FD-M-5 {
-  width: 45vw;
+  width: 47vw;
+  border: 0.05rem solid black;
 }
 
 .FD-M-6 {
-  width: 80vw;
+  width: 75vw;
 }
 
 .FD-M-7 {
-  width: 65vw;
+  width: 60vw;
+  margin-right: 5rem;
+}
+
+#m-7 p {
+  margin-right: 5rem;
 }
 
 .footer-FD {
@@ -472,7 +485,7 @@ footer .lo img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  justify-content: space-between;
   width: 100vw;
 }
 .layout-B .top:hover .hover {

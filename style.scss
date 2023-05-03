@@ -235,6 +235,8 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+
   footer {
     background-color: #c0bfbf6f;
   }
@@ -254,24 +256,29 @@ footer {
 .FDcontainer {
   display: flex;
   width: 100vw;
-  margin-top: 15vh;
+  margin-top: 12vh;
   overflow-x: scroll;
   //border: 0.05rem solid gray;
   padding: 0;
-  .narrow {
-    position: absolute;
-    top: 85%;
-    left: 93%;
+  .arrow{
+    position: fixed;
+    left: 95%;
+    height: 50%;
+    opacity: 0.4;
     font-size: 2rem;
+    border: none;
+  &:hover{
+    background-color: #e1a6b3;
+    opacity:0.9;
   }
+}
 }
 .FD {
   width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-right: 2rem;
-  //transform: translateX(0%);
+  padding-left: 2rem;
 
   p {
     width: 90vw;
@@ -302,17 +309,23 @@ footer {
   //margin-top: 10vh;
 }
 .FD-M-5 {
-  width: 45vw;
+  width: 47vw;
+  border: 0.05rem solid black;
   //margin-top: 6vh;
 }
 .FD-M-6 {
-  width: 80vw;
-  //margin-top: 6vh;
+  width: 75vw;
 }
 
 .FD-M-7 {
-  width: 65vw;
-  //margin-top: 9vh;
+  width: 60vw;
+  margin-right: 5rem;
+
+}
+#m-7{
+  p{
+    margin-right: 5rem;
+  }
 }
 
 .footer-FD {
@@ -510,8 +523,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  //justify-content: space-between;
-  height: 100vh;
+  justify-content: space-between;
   width: 100vw;
 
   .top {
