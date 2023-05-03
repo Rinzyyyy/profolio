@@ -260,18 +260,18 @@ footer {
   overflow-x: scroll;
   //border: 0.05rem solid gray;
   padding: 0;
-  .arrow{
-    position: fixed;
+  .arrow {
+    position: absolute;
     left: 95%;
     height: 50%;
     opacity: 0.4;
     font-size: 2rem;
     border: none;
-  &:hover{
-    background-color: #e1a6b3;
-    opacity:0.9;
+    &:hover {
+      background-color: #e1a6b3;
+      opacity: 0.9;
+    }
   }
-}
 }
 .FD {
   width: 100vw;
@@ -320,10 +320,9 @@ footer {
 .FD-M-7 {
   width: 60vw;
   margin-right: 5rem;
-
 }
-#m-7{
-  p{
+#m-7 {
+  p {
     margin-right: 5rem;
   }
 }

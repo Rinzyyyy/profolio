@@ -245,7 +245,7 @@ footer .lo img {
   padding: 0;
 }
 .FDcontainer .arrow {
-  position: fixed;
+  position: absolute;
   left: 95%;
   height: 50%;
   opacity: 0.4;
