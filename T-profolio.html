@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="my profolio" />
+    <meta name="author" content="Luyinghsuan.Rinzy" />
+    <title>Here is Rinzy</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" href="./logo lu.png" />
+  </head>
+
+  <body class="layout-B">
+    <section class="top">
+      <a class="hover" href="./3D Scenes.html">3D Scenes</a>
+      <a class="hover" href="./Fashion design.html">Fashion design</a>
+      <a class="hover-on" href="#">Layout design</a>
+      <a class="hover" href="./Film editing.html">Film editing</a>
+      <a class="hover" href="./3D fashion.html">3D fashion</a>
+    </section>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.47/vue.global.min.js"
+      integrity="sha512-DJ2+sosWB5FnZAIeCWAHu2gxQ7Gi438oOZLcBQSOrW8gD0s7LIXDv/5RW76B3FcljF40BXnfqNIo6Dhp7dFHJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script type="module">
+      const { createApp } = Vue;
+
+      createApp({
+        data() {
+          return {
+            title: "P",
+            page: 0,
+          };
+        },
+        computed: {
+          file() {
+            return `./image/layout/${this.title}-${this.page}.jpg`;
+          },
+        },
+        methods: {
+          settitle(value) {
+            this.title = value;
+            this.page = 0;
+          },
+          next() {
+            if (this.page >= 4) {
+              this.page = 0;
+            } else {
+              this.page++;
+            }
+          },
+          front() {
+            if (this.page == 0) {
+              this.page = 4;
+            } else {
+              this.page--;
+            }
+          },
+          onoff(title) {
+            return this.title === title ? "on" : "off";
+          },
+        },
+      }).mount("#app");
+    </script>
+
+    <div id="app">
+      <main class="layout">
+        <p class="F" @click="front()">&#8656;</p>
+
+        <article>
+          <img id="PD" :src="file" />
+        </article>
+
+        <p class="B" @click="next()">&#8658;</p>
+      </main>
+
+      <div class="selector">
+        <button @click="settitle('P')" :class="onoff('P')">Profolio</button>
+        <button @click="settitle('D')" :class="onoff('D')">Catalog</button>
+      </div>
+    </div>
+
+    <footer>
+      <a class="lo" href="./index.html"><img src="./logo lu.png" /></a>
+      <p class="fo">©2023 by Rinzy Lu</p>
+    </footer>
+  </body>
+</html>
