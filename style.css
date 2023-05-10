@@ -1,6 +1,8 @@
 * {
   box-sizing: border-box;
   transition: all 0.5s ease-in-out;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -269,6 +271,9 @@ footer .lo img {
   padding: 0rem 5rem 0 5rem;
   text-align: center;
 }
+.FD span {
+  margin-top: 1.5rem;
+}
 
 .FD-M-1 {
   width: 80vw;
@@ -297,11 +302,6 @@ footer .lo img {
 
 .FD-M-7 {
   width: 60vw;
-  margin-right: 5rem;
-}
-
-#m-7 p {
-  margin-right: 5rem;
 }
 
 .footer-FD {
@@ -378,6 +378,7 @@ footer .lo img {
 .Game .content {
   text-align: center;
   width: 75vw;
+  margin-top: 1.5rem;
 }
 
 .Game-B {
@@ -391,6 +392,7 @@ footer .lo img {
 }
 .Game-B .Game p {
   color: white;
+  margin-top: 1.5rem;
 }
 .Game-B .hover {
   color: rgba(251, 248, 248, 0.478);
@@ -683,13 +685,21 @@ footer .lo img {
 }
 @media (max-width: 600px) {
   html {
-    font-size: 12px;
+    font-size: 11px;
   }
   html #enter {
     min-width: 200px;
   }
   .FD p {
     width: 40rem;
+    font-size: 0.7rem;
+    text-align: left;
+  }
+  .FD-B {
+    height: 100vh;
+  }
+  .FDcontainer .arrow {
+    display: none;
   }
   .d3-B .dress p,
   .d3-B .jeans p {
@@ -750,8 +760,23 @@ footer .lo img {
     padding: 2vh 0;
     width: 90vw;
   }
+  .Game-B .Game p {
+    width: 90vw;
+  }
+  .layout-B .selector button {
+    width: 15vw;
+    height: 8vh;
+  }
+  .layout-B .layout article img {
+    max-width: 80vw;
+  }
+  .layout-B .layout article {
+    width: 65vw;
+    background-color: rgba(12, 11, 11, 0.2980392157);
+    border-radius: 0px;
+  }
   footer {
-    width: 30vw;
-    height: 9vh;
+    width: 35vw;
+    height: 15vh;
   }
 }/*# sourceMappingURL=style.css.map */

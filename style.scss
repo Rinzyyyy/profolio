@@ -2,6 +2,8 @@
 * {
   box-sizing: border-box;
   transition: all 0.5s ease-in-out;
+  margin: 0;
+  padding: 0;
 }
 html {
   font-size: 19px;
@@ -285,6 +287,9 @@ footer {
     padding: 0rem 5rem 0 5rem;
     text-align: center;
   }
+  span {
+    margin-top: 1.5rem;
+  }
 }
 
 // .logo-but {
@@ -319,12 +324,6 @@ footer {
 
 .FD-M-7 {
   width: 60vw;
-  margin-right: 5rem;
-}
-#m-7 {
-  p {
-    margin-right: 5rem;
-  }
 }
 
 .footer-FD {
@@ -403,6 +402,7 @@ footer {
   .content {
     text-align: center;
     width: 75vw;
+    margin-top: 1.5rem;
   }
 }
 
@@ -419,6 +419,7 @@ footer {
   .Game {
     p {
       color: white;
+      margin-top: 1.5rem;
     }
   }
   // ------adjust top default-----------
@@ -740,13 +741,22 @@ footer {
 //============600======================================
 @media (max-width: 600px) {
   html {
-    font-size: 12px;
+    font-size: 11px;
     #enter {
       min-width: 200px;
     }
   }
   .FD p {
     width: 40rem;
+    font-size: 0.7rem;
+    text-align: left;
+  }
+
+  .FD-B {
+    height: 100vh;
+  }
+  .FDcontainer .arrow {
+    display: none;
   }
   .d3-B .dress p,
   .d3-B .jeans p {
@@ -811,9 +821,23 @@ footer {
       width: 90vw;
     }
   }
-
+  .Game-B .Game p {
+    width: 90vw;
+  }
+  .layout-B .selector button {
+    width: 15vw;
+    height: 8vh;
+  }
+  .layout-B .layout article img {
+    max-width: 80vw;
+  }
+  .layout-B .layout article {
+    width: 65vw;
+    background-color: #0c0b0b4c;
+    border-radius: 0px;
+  }
   footer {
-    width: 30vw;
-    height: 9vh;
+    width: 35vw;
+    height: 15vh;
   }
 }

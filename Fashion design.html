@@ -21,205 +21,203 @@
 
     <!---------------------------------------------------------------no1--------------- -->
     <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.47/vue.global.min.js"
-    integrity="sha512-DJ2+sosWB5FnZAIeCWAHu2gxQ7Gi438oOZLcBQSOrW8gD0s7LIXDv/5RW76B3FcljF40BXnfqNIo6Dhp7dFHJg=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  ></script>
-   <script type="module">
-    const { createApp } = Vue;
-    createApp({
-      data(){
-        return{
-          width:0,
-          step:0,
-          arrowPosition:"95%",
-          arrow:">"
-        }
-      },
-      mounted(){
-        this.getsize();
-        window.onresize = ()=>{
-          this.getsize(); 
-        }
+      src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.47/vue.global.min.js"
+      integrity="sha512-DJ2+sosWB5FnZAIeCWAHu2gxQ7Gi438oOZLcBQSOrW8gD0s7LIXDv/5RW76B3FcljF40BXnfqNIo6Dhp7dFHJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"></script>
+    <script type="module">
+      const { createApp } = Vue;
+      createApp({
+        data() {
+          return {
+            width: 0,
+            step: 0,
+            arrowPosition: "95%",
+            arrow: ">",
+          };
         },
-      methods:{
-        getsize(){
-          this.$refs.container.scrollLeft=0;
-          this.width = this.$refs.container.offsetWidth;
-          this.step = this.$refs.contents.offsetWidth;
-          this.direction = "R";
-          this.padding = this.width-this.step;
-  
+        mounted() {
+          this.getsize();
+          window.onresize = () => {
+            this.getsize();
+          };
         },
-        slide(){
-
-          if((this.$refs.container.scrollLeft >= this.step*6-this.padding &&this.direction == "R")
-          ||(this.direction === "L"&&this.$refs.container.scrollLeft!=0)){
-
-            this.$refs.container.scrollLeft-=this.step
-            this.direction = "L";
-          
-
-          }else if ((this.$refs.container.scrollLeft===0 && this.direction === "L")
-          ||this.direction === "R"){
-            this.$refs.container.scrollLeft+=this.step
+        methods: {
+          getsize() {
+            this.$refs.container.scrollLeft = 0;
+            this.width = this.$refs.container.offsetWidth;
+            this.step = this.$refs.contents.offsetWidth;
             this.direction = "R";
-           
-          }
+            this.padding = this.width - this.step;
+          },
+          slide() {
+            if (
+              (this.$refs.container.scrollLeft >=
+                this.step * 6 - this.padding &&
+                this.direction == "R") ||
+              (this.direction === "L" && this.$refs.container.scrollLeft != 0)
+            ) {
+              this.$refs.container.scrollLeft -= this.step;
+              this.direction = "L";
+            } else if (
+              (this.$refs.container.scrollLeft === 0 &&
+                this.direction === "L") ||
+              this.direction === "R"
+            ) {
+              this.$refs.container.scrollLeft += this.step;
+              this.direction = "R";
+            }
 
-          if((this.$refs.container.scrollLeft >= this.step*6-this.padding && this.direction == "R")
-          ||this.direction === "L"&&this.$refs.container.scrollLeft!=0){
-            this.arrowPosition="5%"
-            this.arrow="<"
-
-          }else if((this.$refs.container.scrollLeft===0 && this.direction === "L")
-          ||this.direction === "R"){
-            this.arrowPosition="95%"
-            this.arrow=">"
-          }
-
-        }
-      },
-      computed:{
-        
-      }
-
-    }).mount('#slide')
+            if (
+              (this.$refs.container.scrollLeft >=
+                this.step * 6 - this.padding &&
+                this.direction == "R") ||
+              (this.direction === "L" && this.$refs.container.scrollLeft != 0)
+            ) {
+              this.arrowPosition = "5%";
+              this.arrow = "<";
+            } else if (
+              (this.$refs.container.scrollLeft === 0 &&
+                this.direction === "L") ||
+              this.direction === "R"
+            ) {
+              this.arrowPosition = "95%";
+              this.arrow = ">";
+            }
+          },
+        },
+        computed: {},
+      }).mount("#slide");
     </script>
     <div id="slide">
-    <div class="FDcontainer" ref="container" @resize="getsize">
-      <button class="arrow" @click="slide" :style="{left:arrowPosition}">{{arrow}}</button>
-      <main id="m-1" class="FD" ref="contents">
-        <img
-          class="FD-M-1"
-          src="./image/Fashion-Design/FD-1.png"
-          alt="fashion-1"
-        />
-        <p>
+      <div class="FDcontainer" ref="container" @resize="getsize">
+        <button class="arrow" @click="slide" :style="{left:arrowPosition}">
+          {{arrow}}
+        </button>
+        <main id="m-1" class="FD" ref="contents">
+          <img
+            class="FD-M-1"
+            src="./image/Fashion-Design/FD-1.png"
+            alt="fashion-1" />
           <span>Wave-particle</span>
-          <br />
-          <br />
-          "Various aspects of things coexist simultaneously, but what our eyes
-          see often only reflects what we are willing to believe."<br />
-          Using embryo cloth as the main fabric, designing complex patterns to
-          express the seemingly simple nature<br />
-          that becomes complex due to the existence of multiple facets.
-        </p>
-      </main>
-      <!---------------------------------------------------------------no2--------------- -->
-      <main id="m-2" class="FD">
-        <img
-          class="FD-M-2"
-          src="./image/Fashion-Design/FD-2.png"
-          alt="fashion-1"
-        />
-        <p>
+          <p>
+            <br />
+            <br />
+            "Various aspects of things coexist simultaneously, but what our eyes
+            see often only reflects what we are willing to believe."<br />
+            Using embryo cloth as the main fabric, designing complex patterns to
+            express the seemingly simple nature<br />
+            that becomes complex due to the existence of multiple facets.
+          </p>
+        </main>
+        <!---------------------------------------------------------------no2--------------- -->
+        <main id="m-2" class="FD">
+          <img
+            class="FD-M-2"
+            src="./image/Fashion-Design/FD-2.png"
+            alt="fashion-1" />
           <span>Loudly silence</span>
-          <br />
-          <br />
-          The protagonist in the movie "The Artist" refuses to accept being
-          replaced by the advance of color and sound in film. <br />
-          He resists alone and says, "Only through rebellion can one be
-          remembered." <br />
-          Eventually, he finds a balance in his heart and embraces color,<br />
-          Perhaps use protest to demonstrate the value of mime to himself, so
-          that he can willingly let it go and move on.
-        </p>
-      </main>
-      <!---------------------------------------------------------------no3--------------- -->
-      <main id="m-3" class="FD">
-        <img
-          class="FD-M-3"
-          src="./image/Fashion-Design/FD-3.png"
-          alt="fashion-1"
-        />
-        <p>
+          <p>
+            <br />
+            <br />
+            The protagonist in the movie "The Artist" refuses to accept being
+            replaced by the advance of color and sound in film. <br />
+            He resists alone and says, "Only through rebellion can one be
+            remembered." <br />
+            Eventually, he finds a balance in his heart and embraces color,<br />
+            Perhaps use protest to demonstrate the value of mime to himself, so
+            that he can willingly let it go and move on.
+          </p>
+        </main>
+        <!---------------------------------------------------------------no3--------------- -->
+        <main id="m-3" class="FD">
+          <img
+            class="FD-M-3"
+            src="./image/Fashion-Design/FD-3.png"
+            alt="fashion-1" />
           <span>PLay UgLy</span>
-          <br />
-          <br />
-          To shed the anxiety of appearance and the ugliness imposed by others'
-          perceptions, is to revel in the body that is uniquely mine. By using
-          unconventional materials and experimental techniques, turning the
-          physical features that society deems repulsive or undesirable into
-          works of fashion, which is people use to enhance their physical
-          appearance.
-        </p>
-      </main>
-      <!---------------------------------------------------------------no4--------------- -->
-      <main id="m-4" class="FD">
-        <img
-          class="FD-M-4"
-          src="./image/Fashion-Design/FD-4.png"
-          alt="fashion-1"
-        />
-        <p>
+          <p>
+            <br />
+            <br />
+            To shed the anxiety of appearance and the ugliness imposed by
+            others' perceptions, is to revel in the body that is uniquely mine.
+            By using unconventional materials and experimental techniques,
+            turning the physical features that society deems repulsive or
+            undesirable into works of fashion, which is people use to enhance
+            their physical appearance.
+          </p>
+        </main>
+        <!---------------------------------------------------------------no4--------------- -->
+        <main id="m-4" class="FD">
+          <img
+            class="FD-M-4"
+            src="./image/Fashion-Design/FD-4.png"
+            alt="fashion-1" />
           <span>puyumaXsuperman</span>
-          <br />
-          <br />
-          Like a superhero guarding their tribe, striving to preserve and carry
-          on the precious traditions and culture. <br />
-          I use cloth and spray paint to print the unique patterns of the Amis
-          tribe. <br />The combination of plastic and PC board chips represents
-          the integration of tradition and modernity, <br />aiming to continue
-          the legacy rather than replace it.
-        </p>
-      </main>
-      <!---------------------------------------------------------------no5--------------- -->
-      <main id="m-5" class="FD" >
-        <img
-          class="FD-M-5"
-          src="./image/Fashion-Design/FD-5.png"
-          alt="fashion-1"
-        />
-        <p>
+          <p>
+            <br />
+            <br />
+            Like a superhero guarding their tribe, striving to preserve and
+            carry on the precious traditions and culture. <br />
+            I use cloth and spray paint to print the unique patterns of the Amis
+            tribe. <br />The combination of plastic and PC board chips
+            represents the integration of tradition and modernity, <br />aiming
+            to continue the legacy rather than replace it.
+          </p>
+        </main>
+        <!---------------------------------------------------------------no5--------------- -->
+        <main id="m-5" class="FD">
+          <img
+            class="FD-M-5"
+            src="./image/Fashion-Design/FD-5.png"
+            alt="fashion-1" />
           <span>scales-suit</span>
-          <br />
-          <br />
-          Inspired by reptiles, the design features layers upon layers of
-          scales, repeating but never identical. <br />The fabric texture of the
-          serpent's body is created through precise folds and stitching
-          techniques. <br />The unique collar design and extra-long lapels are
-          inspired by the teeth and tongue of reptiles.
-        </p>
-      </main>
-      <!---------------------------------------------------------------no6--------------- -->
-      <main id="m-6" class="FD" >
-        <img
-          class="FD-M-6"
-          src="./image/Fashion-Design/FD-6.png"
-          alt="fashion-1"
-        />
-        <p>
+          <p>
+            <br />
+            <br />
+            Inspired by reptiles, the design features layers upon layers of
+            scales, repeating but never identical. <br />The fabric texture of
+            the serpent's body is created through precise folds and stitching
+            techniques. <br />The unique collar design and extra-long lapels are
+            inspired by the teeth and tongue of reptiles.
+          </p>
+        </main>
+        <!---------------------------------------------------------------no6--------------- -->
+        <main id="m-6" class="FD">
+          <img
+            class="FD-M-6"
+            src="./image/Fashion-Design/FD-6.png"
+            alt="fashion-1" />
           <span>planning - Open Mind</span>
-          <br />
-          <br />
-          6ixty8ignt is a young and lively lingerie brand for girls, with a
-          target audience between 18 and 30 years old. <br />
-          New Open Mind series is designed for the woman that every girl dreams
-          of becoming,.<br />
-          and the girl that every woman still carries within her The collection
-          features lace、mesh、geometric prints combined with glossy fabrics and
-          blending elements of sleepwear for women of different ages.
-        </p>
-      </main>
-      <!-----last------------------------------------------------------last--------------- -->
-      <main id="m-7" class="FD" >
-        <img
-          class="FD-M-7"
-          src="./image/Fashion-Design/FD-7.png"
-          alt="fashion-1"
-        />
-        <p>
+          <p>
+            <br />
+            <br />
+            6ixty8ignt is a young and lively lingerie brand for girls, with a
+            target audience between 18 and 30 years old. <br />
+            New Open Mind series is designed for the woman that every girl
+            dreams of becoming,.<br />
+            and the girl that every woman still carries within her The
+            collection features lace、mesh、geometric prints combined with
+            glossy fabrics and blending elements of sleepwear for women of
+            different ages.
+          </p>
+        </main>
+        <!-----last------------------------------------------------------last--------------- -->
+        <main id="m-7" class="FD">
+          <img
+            class="FD-M-7"
+            src="./image/Fashion-Design/FD-7.png"
+            alt="fashion-1" />
           <span>functional suit</span>
-          <br />
-          <br />
-          Putting on a jacket, couldn't resist revealing a tiny waist, adding a
-          bit of the unusual to daily life.
-        </p>
-      </main>
+          <p>
+            <br />
+            <br />
+            Putting on a jacket, couldn't resist revealing a tiny waist, adding
+            a bit of the unusual to daily life.
+          </p>
+        </main>
+      </div>
     </div>
-  </div>
     <footer>
       <a class="lo" href="./index.html"><img src="./logo lu.png" /></a>
       <p class="fo">©2023 by Rinzy Lu</p>
